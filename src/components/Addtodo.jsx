@@ -16,6 +16,7 @@ const Addtodo = () => {
       setDisabled(false)
       dispatch(
         addTask({
+          id:Math.random(),
           title: title.current.value,
           stage: stage.current.value,
           priority: priority.current.value,
