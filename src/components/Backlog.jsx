@@ -1,9 +1,8 @@
 import React from "react";
 import Cards from "./Cards";
 
-const Backlog = ({ taskData, handleDrag, handleOnDrop, handleDragOver }) => {
+const Backlog = ({ taskData, handleDrag, handleOnDrop, handleDragOver, setComponenetName }) => {
   return (
-    <>
       <div
         className="w-1/4 m-2 bg-gray-100 h-full rounded-sm p-2"
         onDrop={handleOnDrop}
@@ -15,24 +14,12 @@ const Backlog = ({ taskData, handleDrag, handleOnDrop, handleDragOver }) => {
             <div
               key={taskData.id}
               draggable
-              onDragStart={(e) => handleDrag(e, taskData)}
+              onDragStart={(e) => {handleDrag(e, taskData), setComponenetName('Backlog')}}
             >
               <Cards taskData={taskData} />
             </div>
           ))}
       </div>
-      {/* <div
-        className="bg-gray-100 p-12"
-        onDrop={handleOnDrop}
-        onDragOver={handleDragOver}
-      >
-        {todoData.map((widgetData) => (
-          <div key={widgetData}>
-            <Cards taskData={widgetData} />
-          </div>
-        ))}
-      </div> */}
-    </>
   );
 };
 

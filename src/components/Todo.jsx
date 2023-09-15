@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import Cards from "./Cards";
 
-const Todo = ({ handleOnDrop, handleDragOver, handleDrag }) => {
+const Todo = ({ handleOnDrop, handleDragOver, handleDrag, setComponenetName, taskData }) => {
   const todoData = useSelector((store) => store.todo);
   return (
     <div

@@ -6,6 +6,7 @@ const Addtodo = () => {
   const dispatch = useDispatch();
   const[disabled, setDisabled] = useState(false);
   const taskData = useSelector((store) => store.task);
+  const todoData = useSelector((store) => store.todo);
   const title = useRef();
   const stage = useRef();
   const priority = useRef();
@@ -83,7 +84,7 @@ const Addtodo = () => {
         </div>
       </div>
       <h3 className="text-sm flex font-bold ml-8 mr-4">Total count: {taskData.length}</h3>
-      <h3 className="text-sm flex font-bold ml-8 mr-4">Pending count: 0</h3>
+      <h3 className="text-sm flex font-bold ml-8 mr-4">Pending count: {todoData.length}</h3>
       <h3 className="text-sm flex font-bold ml-8 mr-4">Completed: 0</h3>
     </div>
   );
