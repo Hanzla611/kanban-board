@@ -1,34 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
-import Backlog from "../components/Backlog";
-import Todo from "../components/Todo";
-import Ongoing from "../components/Ongoing";
-import Done from "../components/Done";
-import Addtodo from "../components/Addtodo";
+import Column from "../components/Column";
+import CreateTask from "../components/CreateTask";
 import { useDispatch, useSelector } from "react-redux";
+import ListTasks from "../components/ListTasks";
+import { Toaster } from "react-hot-toast";
 // import { addTodoTask } from "../utils/todoSlice";
-
 
 function Dashboard() {
   const dispatch = useDispatch();
-  const taskData = useSelector((store) => store.task);
-  
+  // const taskData = useSelector((store) => store.task);
+  const [tasks, setTasks] = useState([]);
+//  useEffect(() => {
+//   setTasks(JSON.parse(localStorage.getItem('tasks')));
+//   console.log(tasks, "taaask");
+// }, [])
+
   return (
     <>
+    <Toaster/>
       <Header />
       <div>
-        <Addtodo />
+        <CreateTask tasks={tasks} setTasks={setTasks} />
       </div>
-      <div className="flex ms-4">
-        <Backlog
-          taskData={taskData}
-          setComponenetName={setComponenetName}
-        />
-        <Todo
-          setComponenetName={setComponenetName}
-        />
-        <Ongoing />
-        <Done />
+      <div className="flex ms-4 items-center text-center">
+        <ListTasks tasks={tasks} setTasks={setTasks}/>
       </div>
     </>
   );

@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addTask } from "../utils/taskSlice";
 
-const Addtodo = () => {
+const CreateTask = () => {
   const dispatch = useDispatch();
   const[disabled, setDisabled] = useState(false);
   const taskData = useSelector((store) => store.task);
@@ -13,8 +13,7 @@ const Addtodo = () => {
   const date = useRef();
 
   const handleButtonClick = () => {
-    if(title && stage && priority && date){
-      setDisabled(false)
+    if(title.current.value<3 || stage.current.value>3 || priority.current.value==='' && date.current.value===null) return alert('enter valid text')
       dispatch(
         addTask({
           id:Math.random(),
@@ -24,7 +23,7 @@ const Addtodo = () => {
           date: date.current.value,
         })
       );
-    }
+    
  
   };
 
@@ -90,4 +89,4 @@ const Addtodo = () => {
   );
 };
 
-export default Addtodo;
+export default CreateTask;

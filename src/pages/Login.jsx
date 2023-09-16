@@ -61,7 +61,7 @@ function Login() {
                   <>
                     <div>
                       <label
-                        for="name"
+                        htmlFor="name"
                         className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                       >
                         Name
@@ -78,7 +78,7 @@ function Login() {
                     </div>
                     <div>
                       <label
-                        for="username"
+                        htmlFor="username"
                         className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                       >
                         Username
@@ -97,7 +97,7 @@ function Login() {
                 )}
                 <div>
                   <label
-                    for="email"
+                    htmlFor="email"
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Your email
@@ -114,7 +114,7 @@ function Login() {
                 </div>
                 <div>
                   <label
-                    for="password"
+                    htmlFor="password"
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
                     Password
@@ -133,7 +133,7 @@ function Login() {
                   <>
                     <div>
                       <label
-                        for="confirm-password"
+                        htmlFor="confirm-password"
                         className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                       >
                         Confirm password
@@ -161,7 +161,7 @@ function Login() {
                       </div>
                       <div className="ml-3 text-sm">
                         <label
-                          for="terms"
+                          htmlFor="terms"
                           className="font-light text-gray-500 dark:text-gray-300"
                         >
                           I accept the{" "}
